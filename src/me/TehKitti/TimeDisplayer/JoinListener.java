@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class JoinListener implements Listener {
@@ -20,5 +21,15 @@ public class JoinListener implements Listener {
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
 		Bukkit.dispatchCommand(player, "playtimetop 10");
+	}
+
+	@EventHandler(priority = EventPriority.HIGHEST)
+	public void onCommandPreprocess(PlayerCommandPreprocessEvent event) {
+		Player sender = event.getPlayer();
+		if (event.getMessage().equalsIgnoreCase("/playtimetop")) {
+			event.setCancelled(true);
+			Bukkit.dispatchCommand(sender, "playtimetop 10");
+
+		}
 	}
 }
