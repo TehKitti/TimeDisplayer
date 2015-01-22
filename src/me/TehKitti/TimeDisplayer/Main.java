@@ -6,7 +6,7 @@ import me.TehKitti.TimeDisplayer.Main;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
-	String v = "1.0";
+	String v = "1.1";
 	public static Main instance;
 
 	@Override
