@@ -1,4 +1,4 @@
 name: TimeDisplayer
-main: me.TehKitti.TimeDisplayer.Main
-version: 1.1
-author: TehKitti
+main: com.vauff.timedisplayer.core.Main
+version: 1.2
+author: Vauff
